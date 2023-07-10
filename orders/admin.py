@@ -1,10 +1,10 @@
 from django.contrib import admin
-from.models import Orders
+from.models import Order
 
-class OrdersAdmin(admin.ModelAdmin):
-    list_orders=("userId","products","totalPrics","shippingAddress","order_date")
+class OrderAdmin(admin.ModelAdmin):
+    list_orders=("payment","customer","products","totalPrice","shippingAddress","order_date","orderDate_update","cart")
 
-admin.site.register(Orders, OrdersAdmin)
+admin.site.register(Order, OrderAdmin)
 
 
 # Register your models here.

@@ -40,15 +40,14 @@ INSTALLED_APPS = [
     'inventory',
     'orders',   
     'shoppingcart',
-    'product',
     'customer',
     'payment',
     'refund',
-    'searchEngine',
     'accountRecovery',
     'reviews',
-    'notifications',
     'discount',
+    'vendors',
+    'shipment',
     # static it can be seen by js css files while intentory can be discoverable online
 ]
 

@@ -5,4 +5,7 @@ class Review(models.Model):
     comment = models.TextField()
     date = models.DateField(auto_now_add=True)
     rating = models.IntegerField()
+    
+def __str__(self):
+      return self.customer_name    
 # Create your models here.

@@ -3,6 +3,7 @@ from payment.models import PaymentMethod
 from customer.models import Customer
 from shoppingcart.models import Cart
 
+
 class Order(models.Model):
     payment= models.OneToOneField(PaymentMethod,on_delete=models.PROTECT,null=True)
     customer = models.ForeignKey(Customer,on_delete=models.CASCADE, null=True)

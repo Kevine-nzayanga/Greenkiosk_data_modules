@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ProductUploadForm
 from .models import Product
 from django.shortcuts import redirect
+
 def upload_product(request):
   
   if request.method == "POST":

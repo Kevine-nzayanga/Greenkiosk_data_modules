@@ -9,10 +9,10 @@
     <h3>Product Upload Form</h3>
 
     <form method = "POST", Classname = "upload-form"> 
-        {%csrf_token%}
+        {%crsf_token%}
         {{form.as_p}}
 
-        <button type="Submit">Save</button>
+        <button type="submit">Save</button>
         
     </form>
 </body>

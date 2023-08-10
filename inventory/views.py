@@ -34,6 +34,7 @@ def product_detail(request,id):
   product = Product.objects.get(id = id)
   return render(request,"inventory/product_detail.html", {"product":product})
 
+
 def edit_product(request, id):
   product= Product.objects.get(id = id)
   if request.method == "POST":
@@ -44,5 +45,7 @@ def edit_product(request, id):
       return redirect("products_detail_view", id= product.id)
   else:
     form= ProductUploadForm(instance = product)
-    return render (request, "inventory/edit_product.html", {"form":form})    
+    return render (request, "inventory/edit_product.html", {"form":form})   
+  
+   
 

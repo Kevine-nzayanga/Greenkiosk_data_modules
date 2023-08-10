@@ -32,7 +32,7 @@
     <td> {{product.description}} </td>
     <td> {{product.price}} </td>
     <td>
-        <a href"{% url 'edit_product_view' product.id %} "><button>Edit product</button></a>
+        <a href="{% url 'edit_product_view' product.id %} "><button>Edit product</button></a>
         <a href="{% url 'products_detail_view' product.id %}"><button>View product</button></a> </td>
     </tr>
     {% endfor %}

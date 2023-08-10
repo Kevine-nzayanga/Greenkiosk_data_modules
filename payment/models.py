@@ -6,5 +6,8 @@ class PaymentMethod(models.Model):
     payment_method = models.CharField(max_length=64)
     payment_amount = models.DecimalField(max_digits=100000, decimal_places=2)
     transactionId = models.IntegerField()
-
+    
+    
+    def __str__(self):
+      return self.payment_method
 # Create your models here.

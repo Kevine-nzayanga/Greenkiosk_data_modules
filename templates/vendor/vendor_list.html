@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <th>Name</th>
+        <th>Email</th>
+        <th>phoneNumber</th>
+        <th>Address</th>
+{% for vendor in vendors %}
+        <tr>
+<td>{{vendor.name}}</td>
+<td>{{vendor.email}}</td>
+<td>{{vendor.phoneNumber}}</td>
+<td>{{ vendor.address}}</td>
+<td>{{vendor.id}}</td>
+<td>
+    <a href="{url 'vendor_edit_view' vendor.id}"> <button>Edit</button> </a>
+</td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

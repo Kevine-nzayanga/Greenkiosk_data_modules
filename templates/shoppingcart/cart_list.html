@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <table>
         <th>Name</th>
         <th> price</th>
@@ -17,10 +18,52 @@
             <td>{{product.price}}</td>
             <td>{{product.discount}}</td>
             <td>
-                <a href="{% url 'edit_cart_view' cart.id %}"><button>Edit</button></a>
+                <a href="{url 'edit_cart_view' product.id}"><button>Edit</button></a>
             </td>
         </tr>
         {%endfor%}
     </table>
 </body>
+
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+  
+    th {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      text-align: left;
+    }
+  
+    td {
+      border: 1px solid #ddd;
+      padding: 8px 15px;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    .edit-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  
+    .edit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </html>
+
+
+<!-- {% comment %} <a href="{% url 'edit_cart_view' cart.id %}"><button>Edit</button></a> {% endcomment %} -->

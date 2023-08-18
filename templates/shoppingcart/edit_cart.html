@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            align-content: center;
+            justify-content: center;
+            
+        }
+        .edit_form{
+            margin-left: 500px;
+            margin-top: 80px;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .form-control {
+            width: 250px;
+            border: 1px solid #ccc;
+            padding: 10px;
+          }
+        
+          .form-label {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        
+          .form-placeholder {
+            color: #999;
+          }
+    </style>
+
+    <form method="POST", class="edit_form">
+        <h2>Edit cart</h2>
+        {%csrf_token%}
+        {{form.as_p}}
+
+        <button type="Submit">Save</button>
+        
+    </form>
+</body>
+</html>

@@ -11,18 +11,58 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static %}
-        <link rel="stylesheet" href="{% static 'CSS/inventory.css'%}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="main">
+            <img src="{{ product.image.url }}"  alt="">
+    
+
        <h4> {{product.name}}</h4>
        <p>{{product.description}}</p>
        <span>{{product.price}}</span>
+       <a href=" {% url 'cart_product_view' %}"><button>Add to cart</button></a>
+
         </div>
-        <a href=" {% url 'cart_product_view' %}"><button>Add to cart</button><a/>
        
+<style>
+
+    .main {
+        background-color: #d7efd5;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 15px;
+        padding: 20px;
+        width: 450px;
+        text-align: center;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .main:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .main img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    button{
+        background-color: rgb(175, 246, 175);
+        color: #000000;
+        padding: 10px 30px;
+        border: none;
+    
+    }
+    button:hover{
+        background-color: rgb(109, 212, 115);
+    }
+    
+</style>
+
     </body>
 </html>

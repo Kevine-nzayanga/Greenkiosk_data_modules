@@ -125,8 +125,8 @@
                     <a  class="name" href="{% url 'products_detail_view' id=product.id %}"><button class="button">View Details</button></a>
         
                      <a class="name" href="{% url 'edit_product_view' id=product.id %}"> <button class="button">Edit</button> </a>
-                     
-                     <a class="name" href=" {% url 'cart_product_view' %}"><button class="button"> Add to cart</button></a>
+
+                     <a class="name" href=" {% url 'cart_product_view' %}"> <button class="button"> Add to cart</button></a>
 
                 </div>
             {% endfor %}

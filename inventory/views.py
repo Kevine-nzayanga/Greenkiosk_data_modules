@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 def upload_product(request):
   
   if request.method == "POST":
-    upload_product = request.FILES.get("images", None)
+    # upload_product = request.FILES.get("images", None)
     # upload_product = request.FILES["images"]
     form = ProductUploadForm(request.POST,request.FILES)
     if form.is_valid():

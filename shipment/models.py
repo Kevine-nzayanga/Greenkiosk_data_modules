@@ -1,5 +1,4 @@
 from django.db import models
-from orders.models import Order
 
 class Shipment(models.Model):
     orders= models.ManyToManyField(Order)

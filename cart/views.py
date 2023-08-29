@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Cart
 
 # def update_total(request):
 #     self.total = sum(ite)
     
-    
+@login_required   
 def add_cart(request, product_id):
     cart=Cart(request)
     cart.add(product_id)

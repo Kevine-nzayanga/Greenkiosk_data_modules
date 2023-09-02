@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'reviews',
     'discount',
     'vendors',
+    'rest_framework',
+    'api',
     # static it can be seen by js css files while intentory can be discoverable online
 ]
 

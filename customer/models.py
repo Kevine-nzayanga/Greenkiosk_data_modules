@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.PROTECT,null=True)
+    # user = models.OneToOneField(User, on_delete=models.PROTECT,null=True)
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
     date_of_birth= models.DateField()

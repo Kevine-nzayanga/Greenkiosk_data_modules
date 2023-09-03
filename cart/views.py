@@ -11,19 +11,23 @@ def cart_products(request):
 
 
 def cart_view(request):
-    cart, created = Cart.objects.get_or_create(user=request.user)
+    # cart, created = Cart.objects.get_or_create(user=request.user)
     return render(request, 'cart/cart.html', {'cart': cart})
 
 
 
 def add_to_cart(request, product_id):
     product = Product.objects.get(id=product_id)
-    cart, created = Cart.objects.get_or_create(user=request.user)
     
-    cart_item, item_created = CartItem.objects.get_or_create(user=request.user, product=product)
+    if request.method == 'POST':
+       quantity = request.POST.get('quantity', 1)
+       cart_item, item_created = CartItem.objects.get_or_create(user=request.user, product=product)
     if not item_created:
         cart_item.product_qty += 1
         cart_item.save()
+    else:
+            cart_item.quantity = int(quantity)
+            cart_item.save()    
     
     return redirect('cart.html', product_id= product.id)
 

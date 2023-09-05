@@ -7,6 +7,39 @@
 </head>
 <body>
   
+
+
+    {% include 'navbar.html'%}
+    <div class="cart-contents-container">
+        <h1 class="cart-title">My Cart</h1>
+        
+        {% if cart_products %}
+            <ul class="product-list">
+                {% for product in cart_products %}
+                    <li class="product-item">
+                        <img class="product-image" src="{{ product.image.url }}" alt="Product Image">
+                        <span class="product-info">{{ product.name }} - ${{ product.price }}</span>
+                        <div class="delete">
+                            <a href="{% url 'remove_from_cart_view' product.id %}">
+                                <i class="fas fa-trash fa-lg" style="color: #46790f;"></i> <!-- Change color to red -->
+                            </a>
+                            
+                            
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <p class="cart-total">Total: ${{ total_price }}</p>
+        {% else %}
+            <p class="empty-cart-message">Your cart is empty.</p>
+        {% endif %}
+        
+        <a href="{% url 'products_list_view' %}" class="continue-shopping-button">Continue Shopping</a>
+        <a href="{% url 'orders_list_view' 1 %}" class="checkout-button">Check Out</a>
+    </div>
+
+
+{% comment %} 
   <h1>Your Cart</h1>
   <ul>
     {% for item in cart.items.all %}
@@ -15,8 +48,8 @@
         <a href="{% url 'cart:remove_from_cart' item.id %}">Remove</a>
       </li>
     {% endfor %}
-  </ul>
-  <a href="{% url 'cart:add_to_cart' product.id %}">Add to Cart</a>
+  </ul> {% endcomment %}
+  {% comment %} <a href="{% url 'cart:add_to_cart' product.id %}">Add to Cart</a> {% endcomment %}
 
 
 
